@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products | Mofor's Clinic of Phytotherapy</title>
+    <title>Products | Dr. Mofor Clinic of Phytotherapy</title>
     
+    <!-- SEO Setup -->
+    <meta name="description" content="Shop 100% natural phytotherapy products at Dr. Mofor Clinic. Discover BIO-TEETH, Power Booster, Skincare Soaps, and full Reproductive Health Packs.">
+    <meta name="keywords" content="BIO-TEETH, Power Booster, Womb Tea, natural skincare soap, fertility tea, Dr Mofor Clinic products, Bamenda">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* =========================================
-           CSS VARIABLES (Shared with Home Page)
-        ========================================= */
+        /* CSS VARIABLES */
         :root {
             --mcp-dark-blue: #0a227c;
             --mcp-dark-blue-hover: #071756;
@@ -38,223 +40,94 @@
             --font-heading: 'Poppins', sans-serif;
 
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
-            --shadow-hover: 0 20px 40px -5px rgba(10, 34, 124, 0.1);
-            
+            --shadow-hover: 0 20px 40px -5px rgba(10, 34, 124, 0.15);
             --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* =========================================
-           RESET & BASE STYLES
-        ========================================= */
+        /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: var(--font-sans);
-            color: var(--text-main);
-            background-color: var(--bg-gray); /* Slightly off-white for product page */
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--text-dark); line-height: 1.2; }
+        body { font-family: var(--font-sans); color: var(--text-main); background-color: var(--bg-gray); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--text-dark); line-height: 1.2; }
         a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        img { max-width: 100%; height: auto; display: block; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        img { max-width: 100%; display: block; }
 
-        /* Utilities */
-        .text-green { color: var(--mcp-green); }
-        .text-blue { color: var(--mcp-dark-blue); }
+        /* BUTTONS */
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 50px; font-weight: 500; cursor: pointer; transition: var(--transition); border: none; font-family: var(--font-sans); }
+        .btn-primary { background-color: var(--mcp-green); color: var(--bg-white); }
+        .btn-primary:hover { background-color: var(--mcp-green-hover); transform: translateY(-2px); }
 
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 12px 24px; border-radius: 50px; font-weight: 500; font-size: 0.95rem;
-            cursor: pointer; transition: var(--transition); border: none; font-family: var(--font-sans);
-        }
-        .btn-primary { background-color: var(--mcp-green); color: var(--bg-white); box-shadow: var(--shadow-md); }
-        .btn-primary:hover { background-color: var(--mcp-green-hover); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-        .btn-outline { background-color: transparent; color: var(--mcp-dark-blue); border: 2px solid var(--border-color); }
-        .btn-outline:hover { border-color: var(--mcp-dark-blue); background-color: var(--bg-white); }
-
-        /* =========================================
-           NAVIGATION
-        ========================================= */
-        .navbar {
-            position: fixed; top: 0; left: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color); z-index: 1000; transition: var(--transition);
-        }
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000; transition: var(--transition); }
         .navbar.scrolled { box-shadow: var(--shadow-sm); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 90px; }
-        .brand-logo { max-height: 60px; width: auto; object-fit: contain; }
+        
+        .brand-logo { max-height: 45px; width: auto; object-fit: contain; }
         
         .nav-links { display: flex; align-items: center; gap: 32px; }
-        .nav-links a:not(.btn):not(.cart-btn) { color: var(--text-main); font-weight: 500; transition: var(--transition); }
+        .nav-links a:not(.btn) { color: var(--text-main); font-weight: 500; transition: var(--transition); }
         .nav-links a.active { color: var(--mcp-green); font-weight: 600; }
-        .nav-links a:not(.btn):not(.cart-btn):hover { color: var(--mcp-green); }
-        
-        .cart-btn {
-            position: relative; font-size: 1.25rem; color: var(--mcp-dark-blue);
-            transition: var(--transition); display: flex; align-items: center;
-        }
-        .cart-btn:hover { color: var(--mcp-green); }
-        .cart-badge {
-            position: absolute; top: -8px; right: -10px; background: var(--mcp-green);
-            color: white; font-size: 0.65rem; font-weight: 700; width: 18px; height: 18px;
-            display: flex; align-items: center; justify-content: center; border-radius: 50%;
-        }
+        .nav-links a:not(.btn):hover { color: var(--mcp-green); }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--mcp-dark-blue); cursor: pointer; transition: var(--transition); }
 
-        /* =========================================
-           PAGE HEADER / HERO
-        ========================================= */
-        .page-header {
-            padding: 160px 0 80px 0;
-            background: linear-gradient(135deg, var(--mcp-dark-blue) 0%, #06154a 100%);
-            color: var(--bg-white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .header-bg-pattern {
-            position: absolute; inset: 0; opacity: 0.05;
-            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-        }
-        .page-header-content { position: relative; z-index: 10; max-width: 800px; margin: 0 auto; }
-        .page-title { font-size: 3rem; margin-bottom: 16px; color: var(--bg-white); }
-        .page-desc { font-size: 1.125rem; color: #dbeafe; }
+        /* HEADER */
+        .page-header { padding: 160px 0 80px 0; background: linear-gradient(135deg, var(--mcp-dark-blue) 0%, #06154a 100%); text-align: center; color: white; }
+        .page-title { font-size: 3rem; margin-bottom: 16px; color: white; }
+        .page-desc { font-size: 1.125rem; color: #dbeafe; max-width: 700px; margin: 0 auto; }
 
-        /* =========================================
-           PRODUCT FILTERS
-        ========================================= */
-        .filters-section {
-            padding: 40px 0;
-            background: var(--bg-white);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 90px; /* Below navbar */
-            z-index: 90;
-        }
-        .filter-list {
-            display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
-        }
-        .filter-btn {
-            background: var(--bg-gray); border: 1px solid var(--border-color);
-            padding: 10px 24px; border-radius: 50px; font-size: 0.95rem; font-weight: 500;
-            color: var(--text-main); cursor: pointer; transition: var(--transition);
-        }
-        .filter-btn:hover { background: var(--mcp-light-green); color: var(--mcp-green); border-color: var(--mcp-light-green); }
-        .filter-btn.active { background: var(--mcp-green); color: var(--bg-white); border-color: var(--mcp-green); box-shadow: var(--shadow-sm); }
-
-        /* =========================================
-           PRODUCT GRID
-        ========================================= */
+        /* PRODUCTS GRID */
         .products-section { padding: 80px 0; }
-        
-        .products-header {
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;
-        }
-        .products-count { color: var(--text-light); font-size: 0.95rem; font-weight: 500; }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 32px;
-        }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 32px; }
 
-        .product-card {
-            background: var(--bg-white); border-radius: 20px; overflow: hidden;
-            border: 1px solid var(--border-color); transition: var(--transition);
-            display: flex; flex-direction: column; position: relative;
-        }
+        .product-card { background: var(--bg-white); border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); transition: var(--transition); display: flex; flex-direction: column; position: relative; }
         .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: transparent; }
 
-        .product-badge {
-            position: absolute; top: 16px; left: 16px; padding: 4px 12px;
-            border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; z-index: 10;
-        }
-        .badge-best { background: var(--mcp-light-blue); color: var(--bg-white); }
-        .badge-new { background: #f59e0b; color: var(--bg-white); }
-        .badge-organic { background: var(--mcp-green); color: var(--bg-white); }
+        .product-badge { position: absolute; top: 16px; left: 16px; padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; z-index: 10; color: white;}
+        .badge-best { background: var(--mcp-light-blue); }
+        .badge-new { background: #f59e0b; }
+        .badge-organic { background: var(--mcp-green); }
 
-        .product-image-wrapper {
-            position: relative; padding-top: 100%; /* 1:1 Aspect Ratio */
-            background-color: var(--bg-gray); overflow: hidden;
-        }
-        .product-image-wrapper img {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; transition: transform 0.5s ease;
-        }
+        /* Photo Image Wrapper - Adjusted to fit product packaging cleanly */
+        .product-image-wrapper { position: relative; padding-top: 100%; background-color: #ffffff; overflow: hidden; border-bottom: 1px solid var(--border-color); }
+        .product-image-wrapper img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; padding: 12px; transition: transform 0.5s ease; }
         .product-card:hover .product-image-wrapper img { transform: scale(1.05); }
-
+        
         .product-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
         .product-category { font-size: 0.75rem; color: var(--mcp-green); font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
-        .product-title { font-size: 1.125rem; margin-bottom: 8px; color: var(--mcp-dark-blue); }
-        .product-desc { font-size: 0.875rem; color: var(--text-light); margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .product-title { font-size: 1.25rem; margin-bottom: 8px; color: var(--mcp-dark-blue); }
+        .product-desc { font-size: 0.875rem; color: var(--text-main); margin-bottom: 20px; flex-grow: 1;}
         
-        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
-        .product-price { font-size: 1.25rem; font-weight: 700; color: var(--text-dark); font-family: var(--font-heading); }
+        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border-color);}
+        .product-price { font-size: 1.25rem; font-weight: 700; color: var(--text-dark); }
         
-        .add-to-cart-btn {
-            width: 40px; height: 40px; border-radius: 50%; background: var(--mcp-light-green);
-            color: var(--mcp-green); display: flex; align-items: center; justify-content: center;
-            border: none; cursor: pointer; transition: var(--transition); font-size: 1.1rem;
-        }
-        .product-card:hover .add-to-cart-btn { background: var(--mcp-green); color: var(--bg-white); }
+        .wa-buy-btn { background: #25D366; color: white; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
+        .wa-buy-btn:hover { background: #1ebe57; transform: translateY(-2px); }
 
-        /* =========================================
-           FEATURED PRODUCT BANNER
-        ========================================= */
-        .featured-banner {
-            margin: 60px 0; border-radius: 32px; overflow: hidden;
-            background: linear-gradient(135deg, #f0f7f4 0%, var(--mcp-light-green) 100%);
-            display: grid; grid-template-columns: 1fr 1fr; align-items: center;
-            box-shadow: var(--shadow-soft);
-        }
+        /* FEATURED BANNER */
+        .featured-banner { margin: 60px 0; border-radius: 32px; overflow: hidden; background: linear-gradient(135deg, #f0f7f4 0%, var(--mcp-light-green) 100%); display: grid; grid-template-columns: 1fr 1fr; align-items: center; border: 1px solid var(--mcp-green); }
         .banner-content { padding: 60px; }
-        .banner-label { display: inline-block; background: var(--bg-white); color: var(--mcp-green); font-weight: 600; font-size: 0.875rem; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
-        .banner-title { font-size: 2.5rem; color: var(--mcp-dark-blue); margin-bottom: 16px; }
+        .banner-label { display: inline-block; background: var(--bg-white); color: var(--mcp-green); font-weight: 600; font-size: 0.875rem; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; }
+        .banner-title { font-size: 2.25rem; color: var(--mcp-dark-blue); margin-bottom: 16px; }
         .banner-desc { font-size: 1rem; color: var(--text-main); margin-bottom: 32px; }
-        .banner-image { height: 100%; min-height: 400px; background-image: url('https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center; }
+        .banner-image { height: 100%; min-height: 400px; background-image: url('Imgs/womb-tea.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #ffffff; }
 
-        /* =========================================
-           FOOTER (Shared with Home Page)
-        ========================================= */
-        .footer { background-color: var(--bg-dark); color: #9ca3af; padding: 80px 0 32px 0; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; }
-        .footer-brand { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--bg-white); display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
-        .footer-brand i { color: var(--mcp-green); }
-        .footer-col h5 { color: var(--bg-white); font-size: 1rem; margin-bottom: 24px; }
-        .footer-links li { margin-bottom: 12px; }
-        .footer-links a { font-size: 0.875rem; transition: var(--transition); }
-        .footer-links a:hover { color: var(--mcp-green); }
-        .social-links { display: flex; gap: 16px; }
-        .social-links a { width: 36px; height: 36px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bg-white); transition: var(--transition); }
-        .social-links a:hover { background: var(--mcp-green); }
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
-        .footer-bottom-links { display: flex; gap: 16px; }
-        .footer-bottom-links a:hover { color: var(--bg-white); }
+        /* FOOTER */
+        .footer { background-color: var(--bg-dark); color: #9ca3af; padding: 60px 0 32px 0; text-align: center; }
 
-        /* Animations */
-        .fade-in { animation: fadeIn 0.8s ease forwards; opacity: 0; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Mobile Adjustments */
-        @media (max-width: 992px) {
-            .featured-banner { grid-template-columns: 1fr; }
-            .banner-image { min-height: 300px; order: -1; }
-            .banner-content { padding: 40px 24px; text-align: center; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .products-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-            .filter-list { justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
-            .filter-btn { white-space: nowrap; }
-            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-            .page-title { font-size: 2.25rem; }
+        /* RESPONSIVE & MOBILE MENU */
+        @media (max-width: 992px) { .featured-banner { grid-template-columns: 1fr; } .banner-image { min-height: 250px; order: -1; } .banner-content { padding: 40px 24px; text-align: center; } }
+        @media (max-width: 768px) { 
+            .page-title { font-size: 2.25rem; } 
+            .nav-links { 
+                position: absolute; top: 90px; left: 0; width: 100%;
+                background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
+                flex-direction: column; align-items: center; padding: 32px 24px;
+                box-shadow: var(--shadow-md); border-bottom: 1px solid var(--border-color);
+                gap: 24px; display: none; opacity: 0; transform: translateY(-10px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .nav-links.active { display: flex; opacity: 1; transform: translateY(0); }
+            .mobile-menu-btn { display: block; } 
         }
     </style>
 </head>
@@ -263,233 +136,163 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <!-- Logo -->
             <a href="index.html" class="logo-link">
-                <img src="https://via.placeholder.com/250x80/ffffff/0a227c?text=Insert+MCP+Logo+Here" 
-                     alt="Mofor's Clinic of Phytotherapy" 
-                     class="brand-logo"
-                     onerror="this.outerHTML='<div class=\'footer-brand\' style=\'color: var(--mcp-dark-blue);\'><i class=\'fa-solid fa-leaf\'></i>MCP</div>'">
+                <img src="Imgs/logo.jpg" alt="Dr. Mofor Clinic" class="brand-logo" onerror="this.outerHTML='<div style=\'color: var(--mcp-dark-blue); font-weight: 700; font-size: 1.25rem; margin:0;\'><i class=\'fa-solid fa-leaf\' style=\'color: var(--mcp-green);\'></i> Dr. Mofor Clinic</div>'">
             </a>
-
-            <!-- Desktop Links -->
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
-                <a href="index.html#about">About Us</a>
+                <a href="about.html">About Us</a>
                 <a href="index.html#services">Services</a>
-                <a href="#" class="active">Products</a>
-                <a href="index.html#contact">Contact</a>
-                
-                <!-- Cart Icon -->
-                <a href="#" class="cart-btn" aria-label="Shopping Cart">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-badge">2</span>
-                </a>
-                
-                <a href="index.html#contact" class="btn btn-primary" style="margin-left: 16px;">Consult a Specialist</a>
+                <a href="menu.html" class="active">Products</a>
+                <a href="index.html#contact" class="btn btn-primary" style="margin-top: 10px;">Book Appointment</a>
             </div>
-
-            <!-- Mobile Menu Toggle -->
-            <div style="display: flex; align-items: center; gap: 24px;" class="mobile-only-flex">
-                <a href="#" class="cart-btn" style="display: block;" aria-label="Shopping Cart">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-badge">2</span>
-                </a>
-                <button class="mobile-menu-btn" style="background: none; border: none; font-size: 1.5rem; color: var(--mcp-dark-blue); cursor: pointer;">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            
-            <style>
-                @media (min-width: 769px) { .mobile-only-flex { display: none !important; } }
-            </style>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
-        <div class="header-bg-pattern"></div>
-        <div class="container page-header-content fade-in">
+        <div class="container fade-in">
             <h1 class="page-title">Nature's Pharmacy</h1>
             <p class="page-desc">Discover our premium range of 100% natural, clinically formulated phytotherapy products designed to heal, restore, and protect.</p>
         </div>
     </header>
 
-    <!-- Categories / Filters -->
-    <section class="filters-section">
-        <div class="container">
-            <div class="filter-list">
-                <button class="filter-btn active">All Products</button>
-                <button class="filter-btn">Oral & Dental</button>
-                <button class="filter-btn">Reproductive Health</button>
-                <button class="filter-btn">Skincare</button>
-                <button class="filter-btn">General Wellness</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Grid -->
     <section class="products-section container">
-        <div class="products-header fade-in">
-            <h2 style="font-size: 1.5rem; color: var(--mcp-dark-blue);">Our Formulations</h2>
-            <div class="products-count">Showing 1-8 of 24 products</div>
-            
-            <!-- Simple Sort Dropdown (Visual) -->
-            <select style="padding: 8px 16px; border: 1px solid var(--border-color); border-radius: 8px; font-family: var(--font-sans); color: var(--text-main); outline: none; background: white;">
-                <option>Sort by: Featured</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-                <option>Newest Arrivals</option>
-            </select>
-        </div>
 
         <div class="products-grid">
             
-            <!-- Product 1 -->
-            <div class="product-card fade-in" style="animation-delay: 0.1s;">
+            <!-- Product 1: BIO-TEETH -->
+            <div class="product-card">
+                <div class="product-badge badge-best">Top Seller</div>
+                <div class="product-image-wrapper">
+                    <img src="Imgs/bio-teeth.jpg" alt="BIO-TEETH Cleansing Liquid flyer">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Oral & Dental Care</span>
+                    <h3 class="product-title">BIO-TEETH Cleansing Liquid</h3>
+                    <p class="product-desc">Proven mixture to fight tooth bleeding gums, cavities, bad breath, plaque, tartar build-up, and chronic mouth infections. Restores confidence instantly.</p>
+                    <div class="product-footer">
+                        <span class="product-price">12,000 CFA</span>
+                        <a href="https://wa.me/237698773110?text=Hello%20Dr.%20Mofor,%20I%20want%20to%20order%20the%20BIO-TEETH%20for%2012,000%20CFA" target="_blank" class="wa-buy-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: POWER BOOSTER -->
+            <div class="product-card">
+                <div class="product-badge badge-new">Men & Women</div>
+                <div class="product-image-wrapper">
+                    <img src="Imgs/power-booster.jpg" alt="POWER BOOSTER Pack">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Reproductive Health</span>
+                    <h3 class="product-title">POWER BOOSTER Herbal Formula</h3>
+                    <p class="product-desc">To combat low sperm count, poor sperm mobility, sexual weakness, and premature ejaculation. Clears yeast and supports healthy male/female fertility.</p>
+                    <div class="product-footer">
+                        <span class="product-price">10,000 CFA</span>
+                        <a href="https://wa.me/237698773110?text=Hello%20Dr.%20Mofor,%20I%20want%20to%20order%20the%20POWER%20BOOSTER%20for%2010,000%20CFA" target="_blank" class="wa-buy-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: J.M6 SPECIAL -->
+            <div class="product-card">
+                <div class="product-badge badge-new">20% Discount</div>
+                <div class="product-image-wrapper">
+                    <img src="Imgs/jm6-special.jpg" alt="J.M6 Special bottle flyer">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Reproductive Health</span>
+                    <h3 class="product-title">J. M6 SPECIAL</h3>
+                    <p class="product-desc">Specially formulated analgesic drink designed to combat procreation problems, lumbago, abdominal pains, and effectively enhance libido and sperm count.</p>
+                    <div class="product-footer">
+                        <span class="product-price">12,000 CFA</span>
+                        <a href="https://wa.me/237698773110?text=Hello%20Dr.%20Mofor,%20I%20want%20to%20order%20the%20JM6%20SPECIAL%20for%2012,000%20CFA" target="_blank" class="wa-buy-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Organic Black Soap -->
+            <div class="product-card">
+                <div class="product-badge badge-organic">100% Organic</div>
+                <div class="product-image-wrapper">
+                    <img src="Imgs/organic-black-soap.jpg" alt="Organic Black Soap packaging with before/after results">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Skincare</span>
+                    <h3 class="product-title">Organic Black Soap (250g)</h3>
+                    <p class="product-desc">Enriched with Vitamin E & A. Targets sun burns, skin rashes, ring worm, dandruff, pimples, body itches, eczema, and clears severe dark spots.</p>
+                    <div class="product-footer">
+                        <span class="product-price">5,000 CFA</span>
+                        <a href="https://wa.me/237698773110?text=Hello%20Dr.%20Mofor,%20I%20want%20to%20order%20the%20Organic%20Black%20Soap%20for%205,000%20CFA" target="_blank" class="wa-buy-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5: Organic Fair Skin Soap -->
+            <div class="product-card">
+                <div class="product-badge badge-organic">100% Organic</div>
+                <div class="product-image-wrapper">
+                    <img src="Imgs/fair-skin-soap.jpg" alt="Organic Fair Skin Soap flyer with results">
+                </div>
+                <div class="product-content">
+                    <span class="product-category">Skincare</span>
+                    <h3 class="product-title">Organic Fair Skin Soap (250g)</h3>
+                    <p class="product-desc">Active botanical soap with Vitamin E & A. Eradicates dark spots, stretch marks, skin peeling, rashes, and balances skin tone on elbows, hands, and feet.</p>
+                    <div class="product-footer">
+                        <span class="product-price">6,000 CFA</span>
+                        <a href="https://wa.me/237698773110?text=Hello%20Dr.%20Mofor,%20I%20want%20to%20order%20the%20Organic%20Fair%20Skin%20Soap%20for%206,000%20CFA" target="_blank" class="wa-buy-btn"><i class="fab fa-whatsapp"></i> Buy</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6: WOMB TEA -->
+            <div class="product-card">
                 <div class="product-badge badge-best">Best Seller</div>
                 <div class="product-image-wrapper">
-                    <!-- Placeholder using a clean cosmetic/medicine bottle image -->
-                    <img src="Imgs/bio-teeth.jpg" alt="Advanced Oral Defense Rinse">
-                </div>
-                <div class="product-content">
-                    <span class="product-category">Oral & Dental Care</span>
-                    <h3 class="product-title">Bio-Teeth</h3>
-                    <p class="product-desc">A powerful botanical blend designed to eradicate mouth odor causing bacteria and soothe bleeding gums instantly.</p>
-                    <div class="product-footer">
-                        <span class="product-price">$35.00</span>
-                        <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card fade-in" style="animation-delay: 0.2s;">
-                <div class="product-badge badge-organic">100% Organic</div>
-                <div class="product-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1615397323755-f2e15bc3251a?auto=format&fit=crop&w=600&q=80" alt="Gingiva Repair Herbal Paste">
-                </div>
-                <div class="product-content">
-                    <span class="product-category">Oral & Dental Care</span>
-                    <h3 class="product-title">Gingiva Repair Herbal Paste</h3>
-                    <p class="product-desc">Natural abrasive-free paste formulated with clove and myrrh to strengthen sensitive teeth and repair damaged gums.</p>
-                    <div class="product-footer">
-                        <span class="product-price">$28.00</span>
-                        <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card fade-in" style="animation-delay: 0.3s;">
-                <div class="product-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80" alt="Vitality & Balance Extract">
+                    <img src="Imgs/womb-tea.jpg" alt="Womb Tea pouches">
                 </div>
                 <div class="product-content">
                     <span class="product-category">Reproductive Health</span>
-                    <h3 class="product-title">Vitality & Balance Extract</h3>
-                    <p class="product-desc">A concentrated tincture designed to support hormonal balance, regulate cycles, and enhance natural fertility.</p>
+                    <h3 class="product-title">Womb Tea (Detox Beauty)</h3>
+                    <p class="product-desc">Rejuvenating blend to tone the womb, alleviate menstrual pain, cleanse the vagina, balance critical hormones, and fight skin dryness.</p>
                     <div class="product-footer">
-                        <span class="product-price">$55.00</span>
-                        <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fas fa-plus"></i></button>
+                        <span class="product-price">Inquire</span>
+                        <a href="https://wa.me/237698773110?text=Hello%20Dr.%20Mofor,%20I%20want%20to%20order%20the%20Womb%20Tea" target="_blank" class="wa-buy-btn"><i class="fab fa-whatsapp"></i> Buy</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Product 4 -->
-            <div class="product-card fade-in" style="animation-delay: 0.4s;">
-                <div class="product-badge badge-new">New</div>
+            <!-- Product 7: Tampon -->
+            <div class="product-card">
                 <div class="product-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&w=600&q=80" alt="Clear Radiance Botanical Serum">
-                </div>
-                <div class="product-content">
-                    <span class="product-category">Skincare</span>
-                    <h3 class="product-title">Clear Radiance Botanical Serum</h3>
-                    <p class="product-desc">Lightweight, non-comedogenic herbal serum that treats acne at the root while promoting a healthy, natural glow.</p>
-                    <div class="product-footer">
-                        <span class="product-price">$48.00</span>
-                        <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card fade-in" style="animation-delay: 0.1s;">
-                <div class="product-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=600&q=80" alt="Immune Fortify Tincture">
-                </div>
-                <div class="product-content">
-                    <span class="product-category">General Wellness</span>
-                    <h3 class="product-title">Immune Fortify Tincture</h3>
-                    <p class="product-desc">Daily drops packed with elderberry, echinacea, and adaptogens to protect your body against seasonal threats.</p>
-                    <div class="product-footer">
-                        <span class="product-price">$42.00</span>
-                        <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card fade-in" style="animation-delay: 0.2s;">
-                <div class="product-badge badge-organic">100% Organic</div>
-                <div class="product-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1608248593842-8021c607f2a1?auto=format&fit=crop&w=600&q=80" alt="Eczema Relief Balm">
-                </div>
-                <div class="product-content">
-                    <span class="product-category">Skincare</span>
-                    <h3 class="product-title">Deep Healing Eczema Balm</h3>
-                    <p class="product-desc">A rich, soothing salve combining calendula and chamomile to instantly relieve itching and repair the skin barrier.</p>
-                    <div class="product-footer">
-                        <span class="product-price">$32.00</span>
-                        <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Product 7 -->
-            <div class="product-card fade-in" style="animation-delay: 0.3s;">
-                <div class="product-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1556228578-8d89b6acd8d5?auto=format&fit=crop&w=600&q=80" alt="Male Vigor Complex">
+                    <img src="Imgs/tampon.jpg" alt="Tampon herbal pouch on the beach">
                 </div>
                 <div class="product-content">
                     <span class="product-category">Reproductive Health</span>
-                    <h3 class="product-title">Male Vigor Complex</h3>
-                    <p class="product-desc">Specially formulated herbal capsules to naturally enhance energy, stamina, and support male reproductive health.</p>
+                    <h3 class="product-title">Holistic Herbal Yoni Tampon</h3>
+                    <p class="product-desc">Self-love pearls designed for absolute womb care. Keeps your vagina healthy, fully nourished, and protected while pulling out deep impurities.</p>
                     <div class="product-footer">
-                        <span class="product-price">$60.00</span>
-                        <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fas fa-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="product-card fade-in" style="animation-delay: 0.4s;">
-                <div class="product-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Digestive Reset Tea">
-                </div>
-                <div class="product-content">
-                    <span class="product-category">General Wellness</span>
-                    <h3 class="product-title">Digestive Reset Tea Blend</h3>
-                    <p class="product-desc">A gentle loose-leaf herbal blend designed to reduce bloating, aid digestion, and promote gut health naturally.</p>
-                    <div class="product-footer">
-                        <span class="product-price">$22.00</span>
-                        <button class="add-to-cart-btn" aria-label="Add to cart"><i class="fas fa-plus"></i></button>
+                        <span class="product-price">Inquire</span>
+                        <a href="https://wa.me/237698773110?text=Hello%20Dr.%20Mofor,%20I%20am%20interested%20in%20the%20Herbal%20Yoni%20Tampon" target="_blank" class="wa-buy-btn"><i class="fab fa-whatsapp"></i> Buy</a>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- Featured Product Banner -->
-        <div class="featured-banner fade-in" style="animation-delay: 0.5s;">
+        <!-- Featured Product Banner: Reproductive Health Pack -->
+        <div class="featured-banner">
             <div class="banner-content">
-                <span class="banner-label"><i class="fas fa-star" style="margin-right: 6px;"></i> Clinician's Choice</span>
-                <h2 class="banner-title">The Complete Oral Care Kit</h2>
-                <p class="banner-desc">Transform your dental health with our comprehensive 3-step phytotherapy kit. Includes the Advanced Defense Rinse, Gingiva Repair Paste, and a specialized soft-bristle bamboo brush.</p>
+                <span class="banner-label"><i class="fas fa-star" style="margin-right: 6px;"></i> Clinician's Choice Pack</span>
+                <h2 class="banner-title">Complete Reproductive Health Pack</h2>
+                <p class="banner-desc">Consisting of POWER BOOSTER, WOMB TEA, J.M6 SPECIAL, TAMPON, and ENEMA. A powerful pack of adaptogenic herbs celebrated for improving male and female fertility, combating ovarian cysts, and enhancing overall sexual wellbeing.</p>
                 <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-                    <button class="btn btn-primary" style="padding: 14px 32px; font-size: 1.05rem;">
-                        <i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> Buy Kit - $55.00
-                    </button>
-                    <span style="font-size: 0.875rem; color: var(--text-light); text-decoration: line-through;">Value: $75.00</span>
+                    <a href="https://wa.me/237698773110?text=Hello%20Dr.%20Mofor,%20I%20want%20to%20order%20the%20Complete%20Reproductive%20Health%20Pack%20for%2074,000%20CFA" target="_blank" class="btn btn-primary" style="background: #25D366; font-size: 1.05rem;">
+                        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Order via WhatsApp - 74,000 CFA
+                    </a>
                 </div>
             </div>
             <div class="banner-image"></div>
@@ -497,80 +300,44 @@
 
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-brand">
-                        <i class="fa-solid fa-leaf"></i>MCP
-                    </div>
-                    <p style="font-size: 0.875rem; margin-bottom: 24px;">Mofor's Clinic of Phytotherapy.<br> Healing through nature, backed by science.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#services">Clinic Services</a></li>
-                        <li><a href="#">Shop Products</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h5>Product Categories</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Oral & Dental Care</a></li>
-                        <li><a href="#">Reproductive Health</a></li>
-                        <li><a href="#">Holistic Skincare</a></li>
-                        <li><a href="#">General Wellness</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h5>Connect</h5>
-                    <p style="font-size: 0.875rem; margin-bottom: 8px;"><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--mcp-green);"></i> +1 (234) 567-8900</p>
-                    <p style="font-size: 0.875rem;"><i class="fas fa-envelope" style="margin-right: 8px; color: var(--mcp-green);"></i> orders@mcpclinic.com</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Mofor's Clinic of Phytotherapy. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Shipping & Returns</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-        </div>
+        <p>&copy; 2026 Dr. Mofor Clinic of Phytotherapy. <br>Ayaba Street, Opposite Administrative Garage, Bamenda | <a href="tel:+237698773110" style="color:var(--mcp-green);">+237 6 98 77 31 10</a></p>
     </footer>
 
-    <!-- Simple Script for Navbar Scroll Effect & Filters -->
+    <!-- Scripts -->
     <script>
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            if (window.scrollY > 20) { navbar.classList.add('scrolled'); } 
+            else { navbar.classList.remove('scrolled'); }
         });
 
-        // Filter button interactivity (Visual only for mockup)
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+        // Mobile Menu Toggle Functionality
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        if (mobileBtn && navLinks) {
+            mobileBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = mobileBtn.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
-        });
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileBtn.querySelector('i').classList.remove('fa-times');
+                    mobileBtn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+        }
     </script>
 </body>
 </html>

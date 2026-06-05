@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mofor's Clinic of Phytotherapy (MCP) | Premium Healthcare</title>
+    <title>Dr. Mofor Clinic | Reproductive Health, Dental Hygiene & Skincare</title>
     
+    <!-- Basic SEO Setup -->
+    <meta name="description" content="Dr. Mofor Clinic of Phytotherapy offers 100% natural, highly effective treatments for reproductive health, dental hygiene, mouth infections, and skincare. Located in Bamenda.">
+    <meta name="keywords" content="reproductive health, dental hygiene, mouth infections, bleeding gums, tooth infection, skincare, Dr Mofor clinic, Bamenda, phytotherapy, natural healing">
+    <meta name="author" content="Dr. Mofor Clinic">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* =========================================
-           CSS VARIABLES
-        ========================================= */
+        /* CSS VARIABLES */
         :root {
-            /* Color Palette */
             --mcp-dark-blue: #0a227c;
             --mcp-dark-blue-hover: #071756;
             --mcp-light-blue: #008fd3;
@@ -35,965 +37,167 @@
             --bg-dark: #111827;
             --border-color: #e2e8f0;
 
-            /* Typography */
             --font-sans: 'Inter', sans-serif;
             --font-heading: 'Poppins', sans-serif;
 
-            /* Shadows & Transitions */
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 20px 40px -5px rgba(10, 34, 124, 0.1);
             
             --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* =========================================
-           RESET & BASE STYLES
-        ========================================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); color: var(--text-main); background-color: var(--bg-white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--text-dark); line-height: 1.2; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            color: var(--text-main);
-            background-color: var(--bg-white);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            color: var(--text-dark);
-            line-height: 1.2;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* =========================================
-           UTILITIES & BUTTONS
-        ========================================= */
+        /* UTILITIES & BUTTONS */
         .text-green { color: var(--mcp-green); }
         .text-blue { color: var(--mcp-dark-blue); }
         
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            background: var(--bg-white);
-            color: var(--mcp-green);
-            font-weight: 600;
-            font-size: 0.875rem;
-            padding: 6px 16px;
-            border-radius: 50px;
-            border: 1px solid var(--mcp-light-green);
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 24px;
-        }
-
+        .badge { display: inline-flex; align-items: center; background: var(--bg-white); color: var(--mcp-green); font-weight: 600; font-size: 0.875rem; padding: 6px 16px; border-radius: 50px; border: 1px solid var(--mcp-light-green); box-shadow: var(--shadow-sm); margin-bottom: 24px; }
         .badge i { margin-right: 8px; }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 500;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-        }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 50px; font-weight: 500; text-align: center; cursor: pointer; transition: var(--transition); border: none; font-family: var(--font-sans); }
+        .btn-primary { background-color: var(--mcp-green); color: var(--bg-white); box-shadow: var(--shadow-md); }
+        .btn-primary:hover { background-color: var(--mcp-green-hover); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-secondary { background-color: var(--mcp-dark-blue); color: var(--bg-white); box-shadow: var(--shadow-md); }
+        .btn-secondary:hover { background-color: var(--mcp-dark-blue-hover); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline { background-color: var(--bg-white); color: var(--mcp-dark-blue); border: 1px solid var(--border-color); }
+        .btn-outline:hover { background-color: var(--bg-gray); box-shadow: var(--shadow-md); }
 
-        .btn-primary {
-            background-color: var(--mcp-green);
-            color: var(--bg-white);
-            box-shadow: var(--shadow-md);
-        }
+        .btn-whatsapp { background-color: #25D366; color: white; box-shadow: var(--shadow-md); display: inline-flex; align-items: center; gap: 8px; width: 100%; justify-content: center;}
+        .btn-whatsapp:hover { background-color: #1ebe57; transform: translateY(-2px); box-shadow: var(--shadow-lg); color: white;}
 
-        .btn-primary:hover {
-            background-color: var(--mcp-green-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 50px auto; }
+        .section-subtitle { color: var(--mcp-green); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.875rem; margin-bottom: 8px; display: block; }
+        .section-title { font-size: 2.5rem; font-weight: 700; color: var(--mcp-dark-blue); margin-bottom: 16px; }
 
-        .btn-secondary {
-            background-color: var(--mcp-dark-blue);
-            color: var(--bg-white);
-            box-shadow: var(--shadow-md);
-        }
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000; transition: var(--transition); }
+        .navbar.scrolled { box-shadow: var(--shadow-sm); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 90px; }
+        
+        /* LOGO SIZING FIX */
+        .brand-logo { max-height: 45px; width: auto; object-fit: contain; display:flex;}
+        
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a:not(.btn) { color: var(--text-main); font-weight: 500; transition: var(--transition); }
+        .nav-links a:not(.btn):hover { color: var(--mcp-green); }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--mcp-dark-blue); cursor: pointer; }
 
-        .btn-secondary:hover {
-            background-color: var(--mcp-dark-blue-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
+        /* HERO */
+        .hero { position: relative; padding: 180px 0 100px 0; background: linear-gradient(135deg, #f0f7f4 0%, #f4f8fb 100%); overflow: hidden; }
+        .hero-blobs .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; z-index: 0; }
+        .hero-blobs .blob-1 { width: 400px; height: 400px; background-color: var(--mcp-light-blue); top: -10%; left: -10%; }
+        .hero-blobs .blob-2 { width: 400px; height: 400px; background-color: var(--mcp-green); bottom: -10%; right: -10%; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 10; }
+        .hero-title { font-size: 3.5rem; margin-bottom: 24px; line-height: 1.1; }
+        .hero-desc { font-size: 1.125rem; color: var(--text-main); margin-bottom: 32px; }
+        .hero-buttons { display: flex; gap: 16px; }
+        .hero-image-wrapper { position: relative; }
+        .hero-image-bg { position: absolute; inset: 0; background-color: var(--mcp-green); border-radius: 40px; transform: rotate(3deg) scale(1.05); opacity: 0.1; }
+        .hero-img { position: relative; border-radius: 40px; box-shadow: 0 20px 40px -5px rgba(0,159,77,0.15); width: 100%; height: 600px; object-fit: cover; z-index: 2; }
+        .hero-floating-badge { position: absolute; bottom: 40px; left: -40px; background: var(--bg-white); padding: 16px; border-radius: 16px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 16px; z-index: 3; animation: bounce 3s infinite ease-in-out; }
+        .hero-floating-badge .icon { width: 48px; height: 48px; background: var(--mcp-light-green); color: var(--mcp-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
 
-        .btn-outline {
-            background-color: var(--bg-white);
-            color: var(--mcp-dark-blue);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--bg-gray);
-            box-shadow: var(--shadow-md);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px auto;
-        }
-
-        .section-subtitle {
-            color: var(--mcp-green);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.875rem;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--mcp-dark-blue);
-            margin-bottom: 16px;
-        }
-
-        /* =========================================
-           NAVIGATION
-        ========================================= */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .navbar.scrolled {
-            box-shadow: var(--shadow-sm);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 90px;
-        }
-
-        .brand-logo {
-            max-height: 60px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-        .nav-links a:not(.btn) {
-            color: var(--text-main);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:not(.btn):hover {
-            color: var(--mcp-green);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--mcp-dark-blue);
-            cursor: pointer;
-        }
-
-        /* =========================================
-           HERO SECTION
-        ========================================= */
-        .hero {
-            position: relative;
-            padding: 180px 0 100px 0;
-            background: linear-gradient(135deg, #f0f7f4 0%, #f4f8fb 100%);
-            overflow: hidden;
-        }
-
-        .hero-blobs .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            z-index: 0;
-        }
-
-        .hero-blobs .blob-1 {
-            width: 400px; height: 400px;
-            background-color: var(--mcp-light-blue);
-            top: -10%; left: -10%;
-        }
-
-        .hero-blobs .blob-2 {
-            width: 400px; height: 400px;
-            background-color: var(--mcp-green);
-            bottom: -10%; right: -10%;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 24px;
-            line-height: 1.1;
-        }
-
-        .hero-desc {
-            font-size: 1.125rem;
-            color: var(--text-main);
-            margin-bottom: 32px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-        }
-
-        .trust-indicators {
-            margin-top: 40px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .trust-avatars {
-            display: flex;
-        }
-
-        .trust-avatars img, .trust-avatars .avatar-count {
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            border: 2px solid var(--bg-white);
-            margin-left: -12px;
-            object-fit: cover;
-        }
-        .trust-avatars img:first-child { margin-left: 0; }
-        .trust-avatars .avatar-count {
-            background: var(--bg-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .trust-text {
-            font-size: 0.875rem;
-        }
-
-        .stars { color: #fbbf24; font-size: 0.75rem; margin-bottom: 4px; }
-        .stars i { margin-right: 2px; }
-
-        .hero-image-wrapper {
-            position: relative;
-        }
-
-        .hero-image-bg {
-            position: absolute;
-            inset: 0;
-            background-color: var(--mcp-green);
-            border-radius: 40px;
-            transform: rotate(3deg) scale(1.05);
-            opacity: 0.1;
-        }
-
-        .hero-img {
-            position: relative;
-            border-radius: 40px;
-            box-shadow: 0 20px 40px -5px rgba(0,159,77,0.15);
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            z-index: 2;
-        }
-
-        .hero-floating-badge {
-            position: absolute;
-            bottom: 40px;
-            left: -40px;
-            background: var(--bg-white);
-            padding: 16px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            z-index: 3;
-            animation: bounce 3s infinite ease-in-out;
-        }
-
-        .hero-floating-badge .icon {
-            width: 48px; height: 48px;
-            background: var(--mcp-light-green);
-            color: var(--mcp-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-        }
-
-        /* =========================================
-           STATS SECTION
-        ========================================= */
-        .stats-section {
-            padding: 48px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            text-align: center;
-        }
-
-        .stat-item {
-            border-right: 1px solid var(--border-color);
-        }
-        .stat-item:last-child { border-right: none; }
-
-        .stat-number {
-            font-size: 2.25rem;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            color: var(--mcp-dark-blue);
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            color: var(--text-light);
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        /* =========================================
-           ABOUT SECTION
-        ========================================= */
-        .about-section {
-            padding: 100px 0;
-            background-color: var(--bg-gray);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-image-wrapper {
-            position: relative;
-        }
-
-        .about-img {
-            border-radius: 24px;
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-decoration-1, .about-decoration-2 {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.2;
-            z-index: 1;
-        }
-        .about-decoration-1 {
-            width: 120px; height: 120px;
-            background: var(--mcp-light-blue);
-            top: -24px; right: -24px;
-        }
-        .about-decoration-2 {
-            width: 180px; height: 180px;
-            background: var(--mcp-green);
-            bottom: -24px; left: -24px;
-        }
-
-        .about-content p {
-            margin-bottom: 24px;
-            color: var(--text-main);
-        }
-
-        .about-features {
-            margin-bottom: 32px;
-        }
-
-        .about-features li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        .about-features i {
-            color: var(--mcp-green);
-            font-size: 1.25rem;
-            margin-right: 12px;
-        }
-
-        .about-link {
-            color: var(--mcp-dark-blue);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-        }
-        .about-link i { margin-left: 8px; font-size: 0.875rem; transition: transform 0.3s; }
-        .about-link:hover i { transform: translateX(4px); }
-
-        /* =========================================
-           SERVICES SECTION
-        ========================================= */
-        .services-section {
-            padding: 100px 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-
-        .service-card {
-            background: var(--bg-white);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 32px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .service-card.highlight {
-            border-color: var(--mcp-light-blue);
-            box-shadow: 0 0 20px rgba(0,143,211,0.1);
-        }
-
-        .service-card.highlight:hover {
-            box-shadow: 0 15px 35px rgba(0,143,211,0.2);
-        }
-
-        .service-badge {
-            position: absolute;
-            top: 0; right: 0;
-            background: var(--mcp-light-blue);
-            color: var(--bg-white);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-bottom-left-radius: 8px;
-        }
-
-        .service-icon {
-            width: 56px; height: 56px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 24px;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1);
-            background-color: var(--mcp-green) !important;
-            color: var(--bg-white) !important;
-        }
-
+        /* SERVICES */
+        .services-section { padding: 100px 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+        .service-card { background: var(--bg-white); border: 1px solid var(--border-color); border-radius: 16px; padding: 32px; transition: var(--transition); position: relative; overflow: hidden; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+        .service-card.highlight { border-color: var(--mcp-light-blue); box-shadow: 0 0 20px rgba(0,143,211,0.1); }
+        .service-badge { position: absolute; top: 0; right: 0; background: var(--mcp-light-blue); color: var(--bg-white); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-bottom-left-radius: 8px; }
+        .service-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 24px; transition: var(--transition); }
+        .service-card:hover .service-icon { transform: scale(1.1); background-color: var(--mcp-green) !important; color: var(--bg-white) !important; }
         .icon-green { background: var(--mcp-light-green); color: var(--mcp-green); }
         .icon-blue { background: #eff6ff; color: var(--mcp-light-blue); }
         .icon-indigo { background: #eef2ff; color: #6366f1; }
+        .service-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        .service-card p { font-size: 0.875rem; color: var(--text-light); margin-bottom: 24px; }
+        .service-list { margin-bottom: 24px; }
+        .service-list li { font-size: 0.875rem; margin-bottom: 8px; display: flex; align-items: center; }
+        .service-list li i { margin-right: 8px; }
 
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            margin-bottom: 24px;
-        }
-
-        .service-list {
-            margin-bottom: 24px;
-        }
-
-        .service-list li {
-            font-size: 0.875rem;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-
-        .service-list li i {
-            margin-right: 8px;
-        }
-
-        .service-link {
-            font-size: 0.875rem;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        /* =========================================
-           WHY CHOOSE US SECTION
-        ========================================= */
-        .why-us-section {
-            padding: 100px 0;
-            background-color: var(--mcp-dark-blue);
-            color: var(--bg-white);
-            position: relative;
-        }
-
-        .why-us-bg-pattern {
-            position: absolute;
-            inset: 0;
-            opacity: 0.05;
-            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-        }
-
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        .why-us-text h2 { color: var(--bg-white); margin-bottom: 24px; }
-        .why-us-text > p { color: #dbeafe; font-size: 1.125rem; margin-bottom: 40px; }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .feature-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 24px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .feature-box i {
-            font-size: 2rem;
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .feature-box h4 {
-            color: var(--bg-white);
-            font-size: 1.125rem;
-            margin-bottom: 8px;
-        }
-
-        .feature-box p {
-            color: #dbeafe;
-            font-size: 0.875rem;
-        }
-
-        .why-us-image-wrapper {
-            position: relative;
-        }
-
-        .why-us-img {
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 8px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .certification-badge {
-            position: absolute;
-            bottom: -32px;
-            left: -32px;
-            background: var(--bg-white);
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            border-top: 4px solid var(--mcp-green);
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .certification-badge .icon {
-            width: 48px; height: 48px;
-            background: var(--mcp-light-green);
-            color: var(--mcp-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-        }
-
-        .certification-badge h4 { color: var(--text-dark); margin: 0; }
-        .certification-badge p { color: var(--text-light); font-size: 0.75rem; margin: 0; }
-
-        /* =========================================
-           TESTIMONIALS SECTION
-        ========================================= */
-        .testimonials-section {
-            padding: 100px 0;
-            background-color: var(--bg-gray);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .testimonial-card {
-            background: var(--bg-white);
-            padding: 32px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .testimonial-card.featured {
-            border-top: 4px solid var(--mcp-green);
-            box-shadow: var(--shadow-soft);
-            transform: translateY(-16px);
-        }
-
-        .quote-icon {
-            position: absolute;
-            top: 24px; right: 24px;
-            font-size: 2.5rem;
-            color: var(--bg-gray);
-            z-index: 0;
-        }
-
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-content p {
-            font-style: italic;
-            margin-bottom: 24px;
-            color: var(--text-main);
-        }
-
-        .author-info {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .author-avatar {
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--bg-white);
-            font-weight: 700;
-            font-family: var(--font-heading);
-        }
-
-        .author-details h5 { font-size: 0.875rem; margin-bottom: 2px; }
-        .author-details p { font-size: 0.75rem; color: var(--text-light); margin: 0; }
-
-        /* =========================================
-           CONTACT SECTION
-        ========================================= */
-        .contact-section {
-            padding: 100px 0;
-        }
-
-        .contact-wrapper {
-            background: var(--bg-white);
-            border-radius: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-        }
-
-        .contact-info {
-            background-color: var(--mcp-dark-blue);
-            padding: 48px;
-            color: var(--bg-white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-info-bg {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.2;
-            filter: blur(40px);
-        }
-        .contact-info-bg.top { width: 200px; height: 200px; background: var(--mcp-light-blue); top: -50px; right: -50px; }
-        .contact-info-bg.bottom { width: 200px; height: 200px; background: var(--mcp-green); bottom: -50px; left: -50px; }
-
-        .contact-info-content { position: relative; z-index: 2; }
-        .contact-info-content h3 { color: var(--bg-white); margin-bottom: 8px; font-size: 1.5rem; }
-        .contact-info-content > p { color: #dbeafe; font-size: 0.875rem; margin-bottom: 40px; }
-
-        .contact-details { display: flex; flex-direction: column; gap: 32px; }
-        .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+        /* DUAL WHATSAPP CONTACT */
+        .contact-section { padding: 100px 0; background-color: var(--bg-gray); }
+        .wa-pathways-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 60px; }
+        .wa-card { background: var(--bg-white); border-radius: 24px; padding: 40px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); text-align: left; }
+        .wa-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+        .wa-card-icon { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; }
+        .wa-card-icon.consult { background: #eff6ff; color: var(--mcp-light-blue); }
+        .wa-card-icon.shop { background: var(--mcp-light-green); color: var(--mcp-green); }
+        .wa-card h3 { font-size: 1.5rem; margin-bottom: 8px; }
+        .wa-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 24px; }
         
-        .contact-icon {
-            width: 40px; height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--mcp-green);
-            flex-shrink: 0;
-        }
-        .contact-icon.whatsapp { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 0.875rem; font-weight: 500; color: var(--text-dark); margin-bottom: 8px; }
+        .form-control { width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: 8px; font-family: var(--font-sans); font-size: 1rem; outline: none; background: var(--bg-gray); transition: var(--transition); }
+        .form-control:focus { border-color: var(--mcp-green); background: var(--bg-white); box-shadow: 0 0 0 3px var(--mcp-light-green); }
+        textarea.form-control { resize: vertical; min-height: 100px; }
 
-        .contact-item h5 { color: var(--bg-white); font-size: 1rem; margin-bottom: 4px; }
-        .contact-item p { color: #dbeafe; font-size: 0.875rem; }
-        .contact-item a.whatsapp-link { color: #4ade80; font-size: 0.75rem; display: inline-block; margin-top: 4px; }
+        /* QUICK INFO BAR */
+        .quick-contact-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+        .info-box { background: var(--bg-white); padding: 24px; border-radius: 16px; text-align: center; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+        .info-box i { font-size: 2rem; color: var(--mcp-green); margin-bottom: 16px; }
+        .info-box h4 { margin-bottom: 8px; }
+        .info-box p, .info-box a { color: var(--text-main); font-size: 0.95rem; }
+        .info-box a:hover { color: var(--mcp-green); }
 
-        .contact-form-container {
-            padding: 48px;
-        }
-
-        .contact-form-container h3 { font-size: 1.5rem; margin-bottom: 24px; }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-
-        .form-group { margin-bottom: 24px; }
-        .form-group label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            color: var(--text-main);
-            transition: var(--transition);
-            outline: none;
-            background: var(--bg-white);
-        }
-
-        .form-control:focus {
-            border-color: var(--mcp-green);
-            box-shadow: 0 0 0 3px var(--mcp-light-green);
-        }
-
-        textarea.form-control { resize: vertical; min-height: 120px; }
-
-        .form-submit-btn {
-            width: 100%;
-            padding: 16px;
-            font-size: 1rem;
-        }
-
-        .form-footer {
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--text-light);
-            margin-top: 16px;
-        }
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-        .footer {
-            background-color: var(--bg-dark);
-            color: #9ca3af;
-            padding: 80px 0 32px 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 40px;
-        }
-
-        .footer-brand {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--bg-white);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-        
+        /* FOOTER */
+        .footer { background-color: var(--bg-dark); color: #9ca3af; padding: 80px 0 32px 0; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; }
+        .footer-brand { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--bg-white); display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
         .footer-brand i { color: var(--mcp-green); }
-
-        .footer-col h5 {
-            color: var(--bg-white);
-            font-size: 1rem;
-            margin-bottom: 24px;
-        }
-
+        .footer-col h5 { color: var(--bg-white); font-size: 1rem; margin-bottom: 24px; }
         .footer-links li { margin-bottom: 12px; }
         .footer-links a { font-size: 0.875rem; transition: var(--transition); }
         .footer-links a:hover { color: var(--mcp-green); }
-
         .social-links { display: flex; gap: 16px; }
-        .social-links a {
-            width: 36px; height: 36px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--bg-white);
-            transition: var(--transition);
-        }
-        .social-links a:hover {
-            background: var(--mcp-green);
-        }
+        .social-links a { width: 36px; height: 36px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bg-white); transition: var(--transition); }
+        .social-links a:hover { background: var(--mcp-green); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
 
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.75rem;
-        }
+        /* ANIMATIONS */
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        .footer-bottom-links { display: flex; gap: 16px; }
-        .footer-bottom-links a:hover { color: var(--bg-white); }
-
-        /* =========================================
-           ANIMATIONS & RESPONSIVE DESIGN
-        ========================================= */
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Tablet (max-width: 1024px) */
+        /* RESPONSIVE DESIGN & MOBILE MENU */
         @media (max-width: 1024px) {
-            .hero-grid, .about-grid, .why-us-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
+            .hero-grid { grid-template-columns: 1fr; gap: 48px; }
             .hero-image-wrapper { order: -1; margin-bottom: 32px; }
-            .services-grid, .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .testimonials-grid { grid-template-columns: 1fr; }
-            .testimonial-card.featured { transform: none; }
-            .contact-wrapper { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .wa-pathways-grid { grid-template-columns: 1fr; }
+            .quick-contact-bar { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
-
-        /* Mobile (max-width: 768px) */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block; }
-            
             .hero-title { font-size: 2.5rem; }
             .hero-buttons { flex-direction: column; }
             .hero-img { height: 400px; }
-            
-            .stats-grid { grid-template-columns: 1fr 1fr; }
-            .stat-item:nth-child(2) { border-right: none; }
-            .stat-item { border-bottom: 1px solid var(--border-color); padding-bottom: 24px; margin-bottom: 24px; }
-            .stat-item:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-            
-            .services-grid, .features-grid, .form-grid { grid-template-columns: 1fr; }
-            .certification-badge { bottom: 16px; left: 16px; right: 16px; padding: 16px; }
-            
-            .contact-form-container, .contact-info { padding: 32px 24px; }
-            
+            .services-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+
+            /* Mobile Navigation Dropdown */
+            .nav-links { 
+                position: absolute; top: 90px; left: 0; width: 100%;
+                background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
+                flex-direction: column; align-items: center; padding: 32px 24px;
+                box-shadow: var(--shadow-md); border-bottom: 1px solid var(--border-color);
+                gap: 24px; display: none; opacity: 0; transform: translateY(-10px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .nav-links.active { display: flex; opacity: 1; transform: translateY(0); }
+            .mobile-menu-btn { display: block; background: none; border: none; font-size: 1.8rem; color: var(--mcp-dark-blue); cursor: pointer; transition: var(--transition); }
         }
     </style>
 </head>
@@ -1002,26 +206,19 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <!-- Logo -->
-            <a href="#" class="logo-link">
-                <!-- Replace src with the actual uploaded logo file path -->
-                <img src="/Imgs/logo.jpg" 
-                     alt="Mofor's Clinic of Phytotherapy" 
-                     class="brand-logo"
-                     onerror="this.outerHTML='<div class=\'footer-brand\' style=\'color: var(--mcp-dark-blue);\'><i class=\'fa-solid fa-leaf\'></i>MCP</div>'">
+            <a href="index.html" class="logo-link">
+                <!-- LOGO IMAGE INCLUDED AND SIZED FIX -->
+                <img src="Imgs/logo.jpg" alt="Dr. Mofor Clinic" class="brand-logo" onerror="this.outerHTML='<div style=\'color: var(--mcp-dark-blue); font-weight: 700; font-size: 1.25rem; margin:0;\'><i class=\'fa-solid fa-leaf\' style=\'color: var(--mcp-green);\'></i> Dr. Mofor Clinic</div>'">
+                <h5> Dr Mofor's clinic</h5>
             </a>
-
-            <!-- Desktop Links -->
-            <div class="nav-links">
-                <a href="#about">About Us</a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
                 <a href="#services">Services</a>
-                <a href="#why-us">Why MCP</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#contact" class="btn btn-primary">Book Appointment</a>
+                <a href="menu.html">Products</a>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 10px;">Book Appointment</a>
             </div>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -1035,101 +232,32 @@
         </div>
 
         <div class="container hero-grid">
-            <!-- Hero Text -->
             <div class="hero-content fade-in-up">
                 <div class="badge">
-                    <i class="fas fa-seedling"></i> Premium Natural Healthcare
+                    <i class="fas fa-seedling"></i> 100% Natural Phytotherapy
                 </div>
                 <h1 class="hero-title">
                     Healing Rooted in <span class="text-green">Nature</span>.<br> Care Focused on <span class="text-blue">You</span>.
                 </h1>
                 <p class="hero-desc">
-                    Experience the transformative power of phytotherapy. At MCP, we blend ancient natural wisdom with modern clinical standards to restore your health naturally, safely, and effectively.
+                    Experience the transformative power of botanical medicine. We specialize in reproductive health, resolving chronic mouth infections, and organic skincare.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-secondary">Consult a Specialist</a>
-                    <a href="#services" class="btn btn-outline">Explore Our Services</a>
-                </div>
-                
-                <!-- Trust Indicators -->
-                <div class="trust-indicators">
-                    <div class="trust-avatars">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Patient">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Patient">
-                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=100&q=80" alt="Patient">
-                        <div class="avatar-count">+1k</div>
-                    </div>
-                    <div class="trust-text">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <strong>Trusted by thousands</strong> for natural healing.
-                    </div>
+                    <a href="#contact" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> Book Consultation</a>
+                    <a href="menu.html" class="btn btn-outline"><i class="fas fa-shopping-bag"></i> Order Products</a>
                 </div>
             </div>
 
-            <!-- Hero Image -->
             <div class="hero-image-wrapper fade-in-up" style="animation-delay: 0.2s;">
                 <div class="hero-image-bg"></div>
-                <img src="/Imgs/Screenshot_20260603-140942_1.png" alt="Natural Phytotherapy Clinic" class="hero-img">
-                
+                <img src="/Imgs/Screenshot_20260603-140942_1.png" alt="Herbal Medicine Preparation" class="hero-img">
                 <div class="hero-floating-badge">
                     <div class="icon"><i class="fas fa-leaf"></i></div>
                     <div>
-                        <div style="font-size: 0.875rem; color: var(--text-light); font-weight: 500;">100% Natural</div>
-                        <div style="font-weight: 700; color: var(--mcp-dark-blue);">Phytotherapy</div>
+                        <div style="font-size: 0.875rem; color: var(--text-light); font-weight: 500;">Over 5 Years</div>
+                        <div style="font-weight: 700; color: var(--mcp-dark-blue);">Clinical Excellence</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container stats-grid">
-            <div class="stat-item fade-in-up">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item fade-in-up" style="animation-delay: 0.1s;">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Natural Solutions</div>
-            </div>
-            <div class="stat-item fade-in-up" style="animation-delay: 0.2s;">
-                <div class="stat-number">5k+</div>
-                <div class="stat-label">Happy Patients</div>
-            </div>
-            <div class="stat-item fade-in-up" style="animation-delay: 0.3s;">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Patient Support</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container about-grid">
-            <div class="about-image-wrapper">
-                <div class="about-decoration-1"></div>
-                <div class="about-decoration-2"></div>
-                <img src="/Imgs/Screenshot_20260603-155031_1.png" alt="Clinic Interior" class="about-img">
-            </div>
-            
-            <div class="about-content">
-                <span class="section-subtitle">About MCP</span>
-                <h2 class="section-title">Redefining Healthcare with the Power of Plants</h2>
-                <p>At Mofor's Clinic of Phytotherapy (MCP), we believe that true healing begins when we align with nature. We specialize in providing highly effective, plant-based medicinal therapies tailored to your unique biological needs.</p>
-                <p>Led by experienced phytotherapists, our clinic offers a safe haven for patients seeking alternatives to synthetic medications. From sensitive dental care to complex reproductive health issues, we treat the root cause, ensuring long-lasting wellness.</p>
-                
-                <ul class="about-features">
-                    <li><i class="fas fa-check-circle"></i> Experienced Clinical Guidance</li>
-                    <li><i class="fas fa-check-circle"></i> Personalized Treatment Plans</li>
-                    <li><i class="fas fa-check-circle"></i> Safe, Non-Toxic Therapies</li>
-                </ul>
-                
-                <a href="#about" class="about-link">
-                    Learn more about our methodology <i class="fas fa-arrow-right"></i>
-                </a>
             </div>
         </div>
     </section>
@@ -1144,264 +272,156 @@
             </div>
 
             <div class="services-grid">
-                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-icon icon-green"><i class="fas fa-person-half-dress"></i></div>
                     <h3>Reproductive Health</h3>
                     <p>Natural fertility support and reproductive wellness programs tailored for both men and women.</p>
                     <ul class="service-list">
-                        <li><i class="fas fa-angle-right text-blue"></i> Hormonal Balance</li>
-                        <li><i class="fas fa-angle-right text-blue"></i> Vitality & Vigor</li>
-                        <li><i class="fas fa-angle-right text-blue"></i> Cycle Regulation</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Boost Ovulation & Fertility</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Improve Sperm Count</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Regulate Heavy Periods</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Unblock Fallopian Tubes</li>
                     </ul>
-                    <a href="#" class="service-link text-green">Read More &rarr;</a>
                 </div>
 
-                <!-- Service 2 (Highlighted) -->
                 <div class="service-card highlight">
-                    <div class="service-badge">Popular</div>
+                    <div class="service-badge">Top Service</div>
                     <div class="service-icon icon-blue"><i class="fas fa-tooth"></i></div>
                     <h3>Oral & Dental Health</h3>
                     <p>Effective herbal treatments for stubborn oral issues without harsh chemicals or painful procedures.</p>
                     <ul class="service-list" style="font-weight: 500;">
                         <li><i class="fas fa-check text-green"></i> Mouth Odor Treatment</li>
-                        <li><i class="fas fa-check text-green"></i> Bleeding Gums</li>
-                        <li><i class="fas fa-check text-green"></i> Sensitive Teeth</li>
-                        <li><i class="fas fa-check text-green"></i> Oral Infections</li>
+                        <li><i class="fas fa-check text-green"></i> Bleeding Gums Relief</li>
+                        <li><i class="fas fa-check text-green"></i> Tooth Infection / Abscess</li>
+                        <li><i class="fas fa-check text-green"></i> Ice Cool Teeth Protection</li>
                     </ul>
-                    <a href="#" class="service-link text-blue">Read More &rarr;</a>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon icon-green"><i class="fas fa-spa"></i></div>
                     <h3>Holistic Skincare</h3>
                     <p>Treat skin conditions from the inside out with our organic dermatological phytotherapy blends.</p>
                     <ul class="service-list">
-                        <li><i class="fas fa-angle-right text-blue"></i> Acne & Blemishes</li>
-                        <li><i class="fas fa-angle-right text-blue"></i> Eczema Relief</li>
-                        <li><i class="fas fa-angle-right text-blue"></i> Natural Glow</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Dark Spots & Hyperpigmentation</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Gentle Herbal Radiance</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Dry Skin Hydration</li>
                     </ul>
-                    <a href="#" class="service-link text-green">Read More &rarr;</a>
                 </div>
 
-                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon icon-indigo"><i class="fas fa-heart-pulse"></i></div>
                     <h3>General Wellness</h3>
                     <p>Boost your immune system and overall vitality with customized herbal supplements and detoxes.</p>
                     <ul class="service-list">
-                        <li><i class="fas fa-angle-right text-blue"></i> Immunity Boost</li>
-                        <li><i class="fas fa-angle-right text-blue"></i> Digestive Health</li>
-                        <li><i class="fas fa-angle-right text-blue"></i> Energy & Fatigue</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Reduce Stress & Fatigue</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Decongest Digestive System</li>
+                        <li><i class="fas fa-angle-right text-blue"></i> Balance pH Levels</li>
                     </ul>
-                    <a href="#" class="service-link" style="color: #6366f1;">Read More &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="why-us" class="why-us-section">
-        <div class="why-us-bg-pattern"></div>
-        <div class="container why-us-grid">
-            <div class="why-us-text">
-                <span class="section-subtitle" style="color: var(--mcp-light-blue);">Why Choose MCP</span>
-                <h2 class="section-title">A Patient-Focused Approach to Natural Healing</h2>
-                <p>We don't just prescribe; we partner with you on your health journey. Our clinic is built on trust, transparency, and a deep understanding of botanical medicine.</p>
-                
-                <div class="features-grid">
-                    <div class="feature-box">
-                        <i class="fas fa-user-md" style="color: var(--mcp-light-blue);"></i>
-                        <h4>Personalized Care</h4>
-                        <p>Every treatment is uniquely formulated based on your distinct medical history.</p>
-                    </div>
-                    <div class="feature-box">
-                        <i class="fas fa-leaf" style="color: var(--mcp-green);"></i>
-                        <h4>100% Natural</h4>
-                        <p>Pure, potent, and ethically sourced herbs free from harmful side effects.</p>
-                    </div>
-                    <div class="feature-box">
-                        <i class="fas fa-stethoscope" style="color: var(--mcp-light-blue);"></i>
-                        <h4>Experienced Guidance</h4>
-                        <p>Decades of combined clinical experience in modern phytotherapy.</p>
-                    </div>
-                    <div class="feature-box">
-                        <i class="fas fa-shield-heart" style="color: var(--mcp-green);"></i>
-                        <h4>Lasting Results</h4>
-                        <p>We target the root cause of ailments to provide sustainable, long-term relief.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="why-us-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=800&q=80" alt="Herbal Medicine Preparation" class="why-us-img">
-                
-                <div class="certification-badge">
-                    <div class="icon"><i class="fas fa-award"></i></div>
-                    <div>
-                        <h4>Certified Clinic</h4>
-                        <p>Excellence in Phytotherapy</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Patient Stories</span>
-                <h2 class="section-title">Real Results. Real Healing.</h2>
-            </div>
-
-            <div class="testimonials-grid">
-                <!-- Review 1 -->
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <div class="testimonial-content">
-                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p>"I suffered from severe bleeding gums and chronic mouth odor for years. Dentists only gave me temporary fixes. After 3 weeks on MCP's dental phytotherapy plan, my gums are healthy and my confidence is fully restored!"</p>
-                        <div class="author-info">
-                            <div class="author-avatar" style="background: var(--mcp-light-blue);">SA</div>
-                            <div class="author-details">
-                                <h5>Sarah A.</h5>
-                                <p>Dental Patient</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 (Featured) -->
-                <div class="testimonial-card featured">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <div class="testimonial-content">
-                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p>"My wife and I were struggling with reproductive health issues. We visited MCP as a last resort before invasive procedures. The personalized herbal regimen worked miracles. We are now expecting our first child!"</p>
-                        <div class="author-info">
-                            <div class="author-avatar" style="background: var(--mcp-green);">JP</div>
-                            <div class="author-details">
-                                <h5>James & Patricia</h5>
-                                <p>Reproductive Health</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <div class="testimonial-content">
-                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p>"The skincare treatment is phenomenal. I had sensitive skin that reacted to every chemical product. MCP provided a holistic herbal routine that completely cleared my eczema. I feel amazing."</p>
-                        <div class="author-info">
-                            <div class="author-avatar" style="background: #818cf8;">ML</div>
-                            <div class="author-details">
-                                <h5>Marie L.</h5>
-                                <p>Skincare Patient</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
+    <!-- Dual WhatsApp Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <div class="contact-wrapper">
+            <div class="section-header">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">How Can We Help You Today?</h2>
+                <p>Select whether you need a private consultation with Dr. Mofor or if you simply want to order our clinical products. Both options connect directly to our WhatsApp.</p>
+            </div>
+
+            <div class="wa-pathways-grid">
                 
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <div class="contact-info-bg top"></div>
-                    <div class="contact-info-bg bottom"></div>
-                    
-                    <div class="contact-info-content">
-                        <h3>Get in Touch</h3>
-                        <p>Schedule your consultation today. Our natural healthcare specialists are ready to help.</p>
-                        
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                                <div>
-                                    <h5>Clinic Address</h5>
-                                    <p>123 Healing Avenue, Wellness District<br>City, Country</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-                                <div>
-                                    <h5>Phone</h5>
-                                    <p>+1 (234) 567-8900</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-icon whatsapp"><i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i></div>
-                                <div>
-                                    <h5>WhatsApp</h5>
-                                    <p>+1 (234) 567-8901</p>
-                                    <a href="#" class="whatsapp-link">Chat with us instantly &rarr;</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                                <div>
-                                    <h5>Email</h5>
-                                    <p>care@mcpclinic.com</p>
-                                </div>
-                            </div>
+                <!-- Pathway 1: Consultation -->
+                <div class="wa-card">
+                    <div class="wa-card-header">
+                        <div class="wa-card-icon consult"><i class="fas fa-user-md"></i></div>
+                        <div>
+                            <h3>Book a Consultation</h3>
+                            <p style="margin:0;">Speak with Dr. Mofor regarding your health.</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form-container">
-                    <h3>Book an Appointment</h3>
-                    <form>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" class="form-control" placeholder="John Doe">
-                            </div>
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="+1 (___) ___-____">
-                            </div>
-                        </div>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="john@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label>Service of Interest</label>
-                                <select class="form-control">
-                                    <option>Select a service...</option>
-                                    <option>Oral & Dental Health</option>
-                                    <option>Reproductive Health</option>
-                                    <option>Skincare</option>
-                                    <option>General Wellness Consultation</option>
-                                </select>
-                            </div>
-                        </div>
-
+                    <form id="consult-form">
                         <div class="form-group">
-                            <label>How can we help you?</label>
-                            <textarea class="form-control" placeholder="Briefly describe your symptoms or health goals..."></textarea>
+                            <label>Your Name</label>
+                            <input type="text" id="consult-name" class="form-control" placeholder="Enter your full name" required>
                         </div>
-
-                        <button type="button" class="btn btn-primary form-submit-btn">Request Appointment</button>
-                        <div class="form-footer"><i class="fas fa-lock"></i> Your information is kept strictly confidential.</div>
+                        <div class="form-group">
+                            <label>Health Concern</label>
+                            <select id="consult-topic" class="form-control" required>
+                                <option value="">Select a topic...</option>
+                                <option value="Reproductive Health">Reproductive Health</option>
+                                <option value="Oral & Dental Care">Oral & Dental Care</option>
+                                <option value="Skincare">Skincare</option>
+                                <option value="General Wellness">General Wellness</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Brief Details</label>
+                            <textarea id="consult-details" class="form-control" placeholder="Describe your symptoms briefly..."></textarea>
+                        </div>
+                        <button type="button" onclick="sendWA('consult')" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i> Request Consultation
+                        </button>
                     </form>
                 </div>
 
+                <!-- Pathway 2: Product Purchase -->
+                <div class="wa-card">
+                    <div class="wa-card-header">
+                        <div class="wa-card-icon shop"><i class="fas fa-shopping-bag"></i></div>
+                        <div>
+                            <h3>Order Products</h3>
+                            <p style="margin:0;">Inquire about or purchase our phytotherapy items.</p>
+                        </div>
+                    </div>
+                    <form id="product-form">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" id="product-name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Product of Interest</label>
+                            <select id="product-item" class="form-control" required>
+                                <option value="">Select a product...</option>
+                                <option value="BIO-TEETH (12,000 CFA)">BIO-TEETH (12,000 CFA)</option>
+                                <option value="POWER BOOSTER (10,000 CFA)">POWER BOOSTER (10,000 CFA)</option>
+                                <option value="Reproductive Health Pack (74,000 CFA)">Reproductive Health Pack (74,000 CFA)</option>
+                                <option value="Glowing Skin Soaps">Glowing Skin Soaps (Black/Faith)</option>
+                                <option value="Other / Not Sure">Other / I need recommendations</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Delivery Details / Questions</label>
+                            <textarea id="product-details" class="form-control" placeholder="City/Town, or ask any questions..."></textarea>
+                        </div>
+                        <button type="button" onclick="sendWA('product')" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i> Send Order Inquiry
+                        </button>
+                    </form>
+                </div>
             </div>
+
+            <!-- Quick Info Bar -->
+            <div class="quick-contact-bar">
+                <div class="info-box">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Direct Call</h4>
+                    <a href="tel:+237698773110">+237 6 98 77 31 10</a>
+                </div>
+                <div class="info-box">
+                    <i class="fab fa-facebook-messenger" style="color: #0084ff;"></i>
+                    <h4>Facebook Inquiry</h4>
+                    <a href="https://www.facebook.com/groups/drmoforclinic/" target="_blank">Message Dr. Mofor Clinic</a>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-map-marker-alt" style="color: #ea4335;"></i>
+                    <h4>Clinic Location</h4>
+                    <p>Ayaba Street, Opposite Administrative Garage, Bamenda</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1409,69 +429,104 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Brand -->
                 <div class="footer-col">
-                    <div class="footer-brand">
-                        <i class="fa-solid fa-leaf"></i>MCP
-                    </div>
-                    <p style="font-size: 0.875rem; margin-bottom: 24px;">Mofor's Clinic of Phytotherapy.<br> Healing through nature, backed by science.</p>
+                    <div class="footer-brand"><i class="fa-solid fa-leaf"></i>Dr. Mofor Clinic</div>
+                    <p style="font-size: 0.875rem; margin-bottom: 24px;">Healing through nature, backed by 5+ years of clinical excellence.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/groups/drmoforclinic/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/groups/drmoforclinic/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/237698773110" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                
-                <!-- Links 1 -->
                 <div class="footer-col">
                     <h5>Quick Links</h5>
                     <ul class="footer-links">
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#testimonials">Patient Stories</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="menu.html">Shop Products</a></li>
                     </ul>
                 </div>
-
-                <!-- Links 2 -->
                 <div class="footer-col">
                     <h5>Our Services</h5>
                     <ul class="footer-links">
-                        <li><a href="#">Oral & Dental Care</a></li>
-                        <li><a href="#">Reproductive Health</a></li>
-                        <li><a href="#">Holistic Skincare</a></li>
-                        <li><a href="#">General Wellness</a></li>
+                        <li><a href="#services">Oral & Dental Care</a></li>
+                        <li><a href="#services">Reproductive Health</a></li>
+                        <li><a href="#services">Holistic Skincare</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Short -->
                 <div class="footer-col">
-                    <h5>Connect</h5>
-                    <p style="font-size: 0.875rem; margin-bottom: 8px;"><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--mcp-green);"></i> +1 (234) 567-8900</p>
-                    <p style="font-size: 0.875rem;"><i class="fas fa-envelope" style="margin-right: 8px; color: var(--mcp-green);"></i> care@mcpclinic.com</p>
+                    <h5>Contact Us</h5>
+                    <p style="font-size: 0.875rem; margin-bottom: 8px;"><a href="tel:+237698773110" style="color:inherit;"><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--mcp-green);"></i> +237 6 98 77 31 10</a></p>
+                    <p style="font-size: 0.875rem;"><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--mcp-green);"></i> Ayaba Street, Bamenda</p>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2026 Mofor's Clinic of Phytotherapy. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
+                <p>&copy; 2026 Dr. Mofor Clinic of Phytotherapy. All rights reserved.</p>
+                <p> created and designed by Eze Marvelous</p>
             </div>
         </div>
     </footer>
 
-    <!-- Simple Script for Navbar Scroll Effect -->
+    <!-- Scripts -->
     <script>
+        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            if (window.scrollY > 20) { navbar.classList.add('scrolled'); } 
+            else { navbar.classList.remove('scrolled'); }
         });
+
+        // Mobile Menu Toggle Functionality
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        if (mobileBtn && navLinks) {
+            mobileBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = mobileBtn.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileBtn.querySelector('i').classList.remove('fa-times');
+                    mobileBtn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Dual WhatsApp Routing Function
+        function sendWA(type) {
+            const phone = "237698773110";
+            let text = "";
+
+            if (type === 'consult') {
+                let name = document.getElementById('consult-name').value;
+                let topic = document.getElementById('consult-topic').value;
+                let details = document.getElementById('consult-details').value;
+                
+                if(!name || !topic) return alert("Please fill out your name and topic.");
+                
+                text = `Hello Dr. Mofor Clinic, I am *${name}*.\n\nI would like to book a clinical consultation regarding *${topic}*.\n\nDetails: ${details}`;
+            } 
+            else if (type === 'product') {
+                let name = document.getElementById('product-name').value;
+                let item = document.getElementById('product-item').value;
+                let details = document.getElementById('product-details').value;
+
+                if(!name || !item) return alert("Please fill out your name and the product.");
+
+                text = `Hello Dr. Mofor Clinic, I am *${name}*.\n\nI am interested in purchasing: *${item}*.\n\nDetails/Questions: ${details}`;
+            }
+
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
     </script>
 </body>
 </html>
