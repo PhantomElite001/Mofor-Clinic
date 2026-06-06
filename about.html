@@ -6,8 +6,8 @@
     <title>About Us | Dr. Mofor Clinic of Phytotherapy</title>
     
     <!-- SEO Setup -->
-    <meta name="description" content="Learn about Dr. Mofor Clinic. Over 5 years of experience providing natural phytotherapy for reproductive health, oral care, and skincare in Bamenda.">
-    <meta name="keywords" content="About Dr Mofor, Phytotherapy Bamenda, Natural Clinic, Reproductive Health, Dental Herbal Care">
+    <meta name="description" content="Learn about Dr. Mofor Clinic. Over 5 years of experience providing world-class natural phytotherapy for reproductive health, oral care, and skincare. Global shipping available.">
+    <meta name="keywords" content="About Dr Mofor, Phytotherapy Bamenda, Natural Clinic, Reproductive Health, Dental Herbal Care, Global Consultations">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,29 +20,30 @@
     <style>
         /* CSS VARIABLES */
         :root {
-            --mcp-dark-blue: #0a227c;
-            --mcp-green: #009f4d;
-            --mcp-green-hover: #00823f;
-            --text-dark: #1a202c;
-            --text-main: #4a5568;
+            --mcp-dark-blue: #0f172a;
+            --mcp-green: #10b981;
+            --mcp-green-hover: #059669;
+            --text-dark: #0f172a;
+            --text-main: #475569;
             --bg-white: #ffffff;
             --bg-gray: #f8fafc;
             --border-color: #e2e8f0;
             --font-sans: 'Inter', sans-serif;
             --font-heading: 'Poppins', sans-serif;
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: var(--font-sans); color: var(--text-main); background-color: var(--bg-white); line-height: 1.8; }
-        h1, h2, h3 { font-family: var(--font-heading); color: var(--text-dark); line-height: 1.3; }
+        h1, h2, h3 { font-family: var(--font-heading); color: var(--text-dark); line-height: 1.3; letter-spacing: -0.02em; }
         a { text-decoration: none; color: inherit; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         
-        .btn-primary { background-color: var(--mcp-green); color: var(--bg-white); padding: 12px 28px; border-radius: 50px; display: inline-block; font-weight: 500; transition: var(--transition); border: none; font-family: var(--font-sans);}
-        .btn-primary:hover { background-color: var(--mcp-green-hover); transform: translateY(-2px); }
+        .btn-primary { background-color: var(--mcp-green); color: var(--bg-white); padding: 14px 28px; border-radius: 50px; display: inline-block; font-weight: 500; transition: var(--transition); border: none; font-family: var(--font-sans); box-shadow: var(--shadow-sm);}
+        .btn-primary:hover { background-color: var(--mcp-green-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
         /* NAVIGATION */
         .navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000; transition: var(--transition); }
@@ -50,36 +51,40 @@
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 90px; }
         
         .brand-logo { max-height: 45px; width: auto; object-fit: contain; }
+        .brand-text { display: flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 700; font-size: 1.25rem; color: var(--mcp-dark-blue); }
         
         .nav-links { display: flex; align-items: center; gap: 32px; }
-        .nav-links a:not(.btn) { color: var(--text-main); font-weight: 500; transition: var(--transition); }
+        .nav-links a:not(.btn) { color: var(--text-main); font-weight: 500; transition: var(--transition); font-size: 0.95rem;}
         .nav-links a.active { color: var(--mcp-green); font-weight: 600; }
         .nav-links a:not(.btn):hover { color: var(--mcp-green); }
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--mcp-dark-blue); cursor: pointer; transition: var(--transition); }
 
         /* HEADER */
-        .about-header { padding: 180px 0 80px 0; background-color: var(--bg-gray); text-align: center; border-bottom: 1px solid var(--border-color); }
-        .about-header h1 { font-size: 3rem; color: var(--mcp-dark-blue); margin-bottom: 16px; }
-        .about-header p { font-size: 1.125rem; max-width: 700px; margin: 0 auto; }
+        .about-header { padding: 200px 0 100px 0; background-color: var(--bg-gray); text-align: center; border-bottom: 1px solid var(--border-color); }
+        .about-header h1 { font-size: 3.5rem; color: var(--mcp-dark-blue); margin-bottom: 24px; }
+        .about-header p { font-size: 1.125rem; max-width: 800px; margin: 0 auto; color: var(--text-main); }
 
         /* CONTENT */
-        .about-content { padding: 80px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;}
-        .about-text h2 { font-size: 2.25rem; margin-bottom: 24px; color: var(--mcp-dark-blue); }
-        .about-text p { margin-bottom: 20px; }
+        .about-content { padding: 100px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;}
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 24px; color: var(--mcp-dark-blue); }
+        .about-text p { margin-bottom: 24px; font-size: 1.05rem; }
         
-        .highlight-box { background: var(--bg-gray); border-left: 4px solid var(--mcp-green); padding: 24px; border-radius: 0 12px 12px 0; margin-top: 32px; }
-        .highlight-box h4 { margin-bottom: 8px; color: var(--mcp-dark-blue); }
+        .highlight-box { background: var(--bg-gray); border-left: 4px solid var(--mcp-green); padding: 32px; border-radius: 0 16px 16px 0; margin-top: 40px; box-shadow: var(--shadow-sm); }
+        .highlight-box h4 { margin-bottom: 16px; color: var(--mcp-dark-blue); font-size: 1.25rem;}
 
-        .about-image { background: var(--mcp-green); height: 500px; border-radius: 24px; display: flex; align-items: center; justify-content: center; }
-        .about-image i { font-size: 8rem; color: rgba(255,255,255,0.8); }
+        .about-image { background: linear-gradient(135deg, var(--mcp-green) 0%, #059669 100%); height: 550px; border-radius: 32px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); }
+        .about-image i { font-size: 8rem; color: rgba(255,255,255,0.9); }
 
         /* FOOTER */
-        .footer { background-color: #111827; color: #9ca3af; padding: 60px 0; text-align: center; }
+        .footer { background-color: var(--mcp-dark-blue); color: #94a3b8; padding: 80px 0 40px 0; text-align: center; }
+        .social-links { display: flex; gap: 16px; justify-content: center; margin-bottom: 32px; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bg-white); transition: var(--transition); font-size: 1.1rem; }
+        .social-links a:hover { background: var(--mcp-green); transform: translateY(-2px); }
 
         /* RESPONSIVE & MOBILE MENU */
-        @media (max-width: 900px) { 
-            .about-content { grid-template-columns: 1fr; } 
-            .about-image { order: -1; height: 300px;} 
+        @media (max-width: 992px) { 
+            .about-content { grid-template-columns: 1fr; gap: 40px;} 
+            .about-image { order: -1; height: 350px;} 
         }
         @media (max-width: 768px) {
             .nav-links { 
@@ -92,7 +97,7 @@
             }
             .nav-links.active { display: flex; opacity: 1; transform: translateY(0); }
             .mobile-menu-btn { display: block; } 
-            .about-header h1 { font-size: 2.25rem; }
+            .about-header h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -101,16 +106,16 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo-link">
-                <!-- LOGO IMAGE INCLUDED AND SIZED FIX -->
-                <img src="Imgs/logo.jpg" alt="Dr. Mofor Clinic" class="brand-logo" onerror="this.outerHTML='<div style=\'color: var(--mcp-dark-blue); font-weight: 700; font-size: 1.25rem; margin:0;\'><i class=\'fa-solid fa-leaf\' style=\'color: var(--mcp-green);\'></i> Dr. Mofor Clinic</div>'">
+            <a href="index.html" class="logo-link brand-text">
+                <img src="Imgs/logo.jpg" alt="Dr. Mofor Clinic Logo" class="brand-logo" onerror="this.outerHTML='<i class=\'fa-solid fa-leaf\' style=\'color: var(--mcp-green);\'></i>'">
+                <span>Dr. Mofor Clinic</span>
             </a>
             <div class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html" class="active">About Us</a>
-                <a href="index.html#services">Services</a>
+                <a href="index.html#services">Clinical Services</a>
                 <a href="menu.html">Products</a>
-                <a href="index.html#contact" class="btn btn-primary" style="margin-top: 10px;">Book Appointment</a>
+                <a href="index.html#contact" class="btn btn-primary" style="margin-top: 10px;">Book Consultation</a>
             </div>
             <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -120,23 +125,23 @@
 
     <header class="about-header">
         <div class="container">
-            <h1>Over 5 Years of Natural Healing</h1>
-            <p>At Dr. Mofor Clinic of Phytotherapy, we bridge the gap between traditional herbal wisdom and clinical accuracy to provide safe, effective, and lasting healthcare solutions.</p>
+            <h1>Over 30 Years of Clinical Excellence</h1>
+            <p>At Dr. Mofor Clinic of Phytotherapy, we bridge the gap between world-class botanical medicine and rigorous clinical accuracy to provide safe, effective, and lasting healthcare solutions to patients globally.</p>
         </div>
     </header>
 
     <section class="about-content container">
         <div class="about-text">
-            <h2>Our Mission & Expertise</h2>
-            <p>Located on Ayaba Street in Bamenda, Dr. Mofor Clinic has spent the last five years perfecting the science of Phytotherapy. We believe that true health starts from within, treating the root cause rather than temporarily masking symptoms.</p>
-            <p>Our formulations are specifically designed and tested to address highly stubborn issues that many standard medications struggle to cure completely.</p>
+            <h2>Our Global Mission</h2>
+            <p>Operating securely from our headquarters on Ayaba Street in Bamenda, Cameroon, Dr. Mofor Clinic has spent over five years perfecting the science of advanced Phytotherapy for an international patient base. We believe that true health starts from within, identifying and treating the root cause rather than temporarily masking symptoms.</p>
+            <p>Our formulations are meticulously developed to meet high clinical standards. They are specifically tested to resolve complex, chronic issues that standard synthetic medications often fail to cure completely.</p>
             
             <div class="highlight-box">
-                <h4><i class="fas fa-stethoscope"></i> Clinical Specialties</h4>
-                <p style="margin:0; font-size: 0.9rem;">
-                    <strong>Reproductive Health:</strong> Advanced therapies for both men and women, boosting fertility, unblocking fallopian tubes, and regulating hormones.<br><br>
-                    <strong>Oral & Dental Care:</strong> Complete eradication of mouth odor, tooth infections (abscesses), and bleeding gums using organic bio-active ingredients.<br><br>
-                    <strong>Holistic Skincare:</strong> Treating hyperpigmentation, acne, and skin damage naturally for a lasting glow.
+                <h4><i class="fas fa-shield-alt"></i> Clinical Specialties</h4>
+                <p style="margin:0; font-size: 1rem; line-height: 1.8;">
+                    <strong>Reproductive Health:</strong> Advanced, non-invasive therapies for both men and women, restoring optimal fertility, unblocking fallopian tubes, and regulating complex hormonal imbalances.<br><br>
+                    <strong>Advanced Oral Care:</strong> Total eradication of severe mouth odor, deep tooth infections (abscesses), and chronic bleeding gums using pure bio-active ingredients.<br><br>
+                    <strong>Dermatological Skincare:</strong> Healing stubborn hyperpigmentation, severe acne, and skin barrier damage from the inside out.
                 </p>
             </div>
         </div>
@@ -147,7 +152,14 @@
     </section>
 
     <footer class="footer">
-        <p><strong>Dr. Mofor Clinic</strong><br>Ayaba Street, Opposite Administrative Garage, Bamenda<br><br>Call / WhatsApp: <a href="tel:+237698773110" style="color:var(--mcp-green);">+237 6 98 77 31 10</a></p>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/groups/drmoforclinic/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/237698773110" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@drmofor237" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p><strong>Dr. Mofor Clinic Headquarters</strong><br>Ayaba Street, Opposite Administrative Garage, Bamenda, Cameroon<br><em>Global Consultations & International Shipping Available</em><br><br>Call / WhatsApp: <a href="tel:+237698773110" style="color:var(--mcp-green);">+237 6 98 77 31 10</a></p>
+        </div>
     </footer>
 
     <!-- Scripts -->
